@@ -16,12 +16,10 @@ namespace Avalonia.Diagnostics.Views
     {
         private readonly Panel _adorner;
         private AdornerLayer? _currentLayer;
-        private TreeView _tree;
 
         public TreePageView()
         {
             InitializeComponent();
-            _tree = this.GetControl<TreeView>("tree");
 
             _adorner = new Panel
             {

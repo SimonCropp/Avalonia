@@ -13,7 +13,6 @@ namespace Avalonia.SourceGenerator.CompositionGenerator
         private readonly ICompositionGeneratorSink _output;
         private readonly GConfig _config;
         private readonly HashSet<string> _objects;
-        private readonly HashSet<string> _brushes;
         private readonly Dictionary<string, GManualClass> _manuals;
         public Generator(ICompositionGeneratorSink output, GConfig config)
         {
@@ -22,11 +21,8 @@ namespace Avalonia.SourceGenerator.CompositionGenerator
             _manuals = _config.ManualClasses.ToDictionary(x => x.Name);
             _objects = new HashSet<string>(_config.ManualClasses.Select(x => x.Name)
                 .Concat(_config.Classes.Select(x => x.Name)));
-            _brushes = new HashSet<string>(_config.Classes.OfType<GBrush>().Select(x => x.Name)) {"CompositionBrush"};
         }
 
-        
-        
         public void Generate()
         {
             foreach (var cl in _config.Classes)

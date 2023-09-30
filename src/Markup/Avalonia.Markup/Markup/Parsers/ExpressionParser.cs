@@ -133,7 +133,7 @@ namespace Avalonia.Markup.Parsers
             if (property is null)
                 throw new InvalidOperationException($"Cannot find property {type}.{node.PropertyName}.");
 
-            return new AvaloniaPropertyAccessorNode(property, _enableValidation);
+            return new AvaloniaPropertyAccessorNode(property);
         }
     }
 }

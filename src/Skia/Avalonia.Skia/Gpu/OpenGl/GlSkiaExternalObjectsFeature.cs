@@ -51,7 +51,7 @@ internal class GlSkiaExternalObjectsFeature : IExternalObjectsRenderInterfaceCon
         using (_gpu.EnsureCurrent())
         {
             var semaphore = _feature.ImportSemaphore(handle);
-            return new GlSkiaImportedSemaphore(_gpu, semaphore);
+            return new GlSkiaImportedSemaphore(semaphore);
         }
     }
 
@@ -64,12 +64,10 @@ internal class GlSkiaExternalObjectsFeature : IExternalObjectsRenderInterfaceCon
 
 internal class GlSkiaImportedSemaphore : IPlatformRenderInterfaceImportedSemaphore
 {
-    private readonly GlSkiaGpu _gpu;
     public IGlExternalSemaphore Semaphore { get; }
 
-    public GlSkiaImportedSemaphore(GlSkiaGpu gpu, IGlExternalSemaphore semaphore)
+    public GlSkiaImportedSemaphore(IGlExternalSemaphore semaphore)
     {
-        _gpu = gpu;
         Semaphore = semaphore;
     }
 

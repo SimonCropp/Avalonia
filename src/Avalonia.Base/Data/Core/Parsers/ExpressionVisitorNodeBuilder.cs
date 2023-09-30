@@ -73,7 +73,7 @@ namespace Avalonia.Data.Core.Parsers
             if (node.Indexer == AvaloniaObjectIndexer)
             {
                 var property = GetArgumentExpressionValue<AvaloniaProperty>(node.Arguments[0]);
-                Nodes.Add(new AvaloniaPropertyAccessorNode(property, _enableDataValidation));
+                Nodes.Add(new AvaloniaPropertyAccessorNode(property));
             }
             else
             {

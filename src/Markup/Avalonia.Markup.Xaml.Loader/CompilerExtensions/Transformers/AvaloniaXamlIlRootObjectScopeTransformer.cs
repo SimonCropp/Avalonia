@@ -20,19 +20,15 @@ namespace Avalonia.Markup.Xaml.XamlIl.CompilerExtensions.Transformers
                     new[]
                     {
                         mnode.Manipulation,
-                        new HandleRootObjectScopeNode(mnode, context.GetAvaloniaTypes())
+                        new HandleRootObjectScopeNode(mnode)
                     });
             }
             return node;
         }
         class HandleRootObjectScopeNode : XamlAstNode, IXamlAstManipulationNode
         {
-            private readonly AvaloniaXamlIlWellKnownTypes _types;
-
-            public HandleRootObjectScopeNode(IXamlLineInfo lineInfo,
-                AvaloniaXamlIlWellKnownTypes types) : base(lineInfo)
+            public HandleRootObjectScopeNode(IXamlLineInfo lineInfo) : base(lineInfo)
             {
-                _types = types;
             }
         }
         internal class Emitter : IXamlILAstNodeEmitter

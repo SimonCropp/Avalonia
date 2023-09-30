@@ -12,7 +12,6 @@ namespace Avalonia.Benchmarks.Styling
     public class Style_Apply_Detach_Complex : IDisposable
     {
         private readonly IDisposable _app;
-        private readonly TestRoot _root;
         private readonly TextBox _control;
 
         public Style_Apply_Detach_Complex()
@@ -27,7 +26,7 @@ namespace Avalonia.Benchmarks.Styling
             _control = new TextBox();
             leafPanel.Children.Add(_control);
 
-            _root = new TestRoot(true, rootPanel)
+            new TestRoot(true, rootPanel)
             {
                 Renderer = new NullRenderer(),
             };

@@ -6,13 +6,11 @@ namespace Avalonia.Data.Core
     internal class AvaloniaPropertyAccessorNode : SettableNode
     {
         private IDisposable? _subscription;
-        private readonly bool _enableValidation;
         private readonly AvaloniaProperty _property;
 
-        public AvaloniaPropertyAccessorNode(AvaloniaProperty property, bool enableValidation)
+        public AvaloniaPropertyAccessorNode(AvaloniaProperty property)
         {
             _property = property;
-            _enableValidation = enableValidation;
         }
 
         public override string? Description => PropertyName;

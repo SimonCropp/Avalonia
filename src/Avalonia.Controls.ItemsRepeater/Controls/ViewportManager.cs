@@ -18,7 +18,6 @@ namespace Avalonia.Controls
         private bool _ensuredScroller;
         private IScrollAnchorProvider? _scroller;
         private Control? _makeAnchorElement;
-        private bool _isAnchorOutsideRealizedRange;
         private Rect _visibleWindow;
         private Rect _layoutExtent;
         // This is the expected shift by the layout.
@@ -301,12 +300,11 @@ namespace Avalonia.Controls
             }
         }
 
-        public void OnMakeAnchor(Control? anchor, bool isAnchorOutsideRealizedRange)
+        public void OnMakeAnchor(Control? anchor)
         {
             if (_makeAnchorElement != anchor)
             {
                 _makeAnchorElement = anchor;
-                _isAnchorOutsideRealizedRange = isAnchorOutsideRealizedRange;
             }
         }
 

@@ -86,7 +86,6 @@ namespace Avalonia.Controls
         private ItemContainerGenerator? _itemContainerGenerator;
         private EventHandler<ChildIndexChangedEventArgs>? _childIndexChanged;
         private IDataTemplate? _displayMemberItemTemplate;
-        private ItemsPresenter? _itemsPresenter;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ItemsControl"/> class.
@@ -506,13 +505,6 @@ namespace Avalonia.Controls
                 recycleKey = DefaultRecycleKey;
                 return true;
             }
-        }
-
-        /// <inheritdoc />
-        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
-        {
-            base.OnApplyTemplate(e);
-            _itemsPresenter = e.NameScope.Find<ItemsPresenter>("PART_ItemsPresenter");
         }
 
         /// <summary>

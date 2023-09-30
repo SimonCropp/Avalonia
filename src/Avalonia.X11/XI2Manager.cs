@@ -94,11 +94,9 @@ namespace Avalonia.X11
         }
         
         private PointerDeviceInfo _pointerDevice;
-        private AvaloniaX11Platform _platform;
 
         public bool Init(AvaloniaX11Platform platform)
         {
-            _platform = platform;
             _x11 = platform.Info;
             _multitouch = platform.Options?.EnableMultiTouch ?? true;
             var devices =(XIDeviceInfo*) XIQueryDevice(_x11.Display,

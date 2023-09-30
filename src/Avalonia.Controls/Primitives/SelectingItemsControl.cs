@@ -1394,7 +1394,6 @@ namespace Avalonia.Controls.Primitives
 
             public void UpdateBinding(IBinding binding)
             {
-                _lastBinding = binding;
                 var ib = binding.Initiate(this, ValueProperty);
                 if (ib is null)
                 {
@@ -1403,8 +1402,6 @@ namespace Avalonia.Controls.Primitives
 
                 BindingOperations.Apply(this, ValueProperty, ib, null);
             }
-
-            private IBinding? _lastBinding;
         }
     }
 }

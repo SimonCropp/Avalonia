@@ -25,7 +25,7 @@ namespace Avalonia.Win32.DirectX
             var eglContext = (EglContext)context;
             using (eglContext.EnsureCurrent())
             {
-                return new DxgiRenderTarget(_window, eglContext, _connection);
+                return new DxgiRenderTarget(_window, eglContext);
             }
         }
     }

@@ -531,7 +531,7 @@ namespace Avalonia.Controls
                 element.Measure(Size.Infinity);
             }
 
-            _viewportManager.OnMakeAnchor(element, isAnchorOutsideRealizedRange);
+            _viewportManager.OnMakeAnchor(element);
             InvalidateMeasure();
 
             return element!;

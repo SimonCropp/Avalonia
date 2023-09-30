@@ -30,11 +30,8 @@ namespace Avalonia.Native
 
         class PopupEvents : WindowBaseEvents, IAvnWindowEvents
         {
-            readonly PopupImpl _parent;
-
             public PopupEvents(PopupImpl parent) : base(parent)
             {
-                _parent = parent;
             }
 
             public void GotInputWhenDisabled()

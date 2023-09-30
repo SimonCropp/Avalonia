@@ -94,7 +94,6 @@ namespace Avalonia.Controls.Primitives
         private int _maxValueFromLastBitmapCreation = 0;
 
         private Color _oldColor = Color.FromArgb(255, 255, 255, 255);
-        private HsvColor _oldHsvColor = HsvColor.FromAhsv(0.0f, 0.0f, 1.0f, 1.0f);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ColorSpectrum"/> class.
@@ -421,8 +420,6 @@ namespace Avalonia.Controls.Primitives
                 {
                     SetColor();
                 }
-
-                _oldHsvColor = change.GetOldValue<HsvColor>();
             }
             else if (change.Property == MinHueProperty ||
                      change.Property == MaxHueProperty)

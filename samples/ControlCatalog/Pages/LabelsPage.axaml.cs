@@ -5,8 +5,6 @@ namespace ControlCatalog.Pages
 {
     public partial class LabelsPage : UserControl
     {
-        private Person? _person;
-
         public LabelsPage()
         {
             CreateDefaultPerson();
@@ -15,7 +13,7 @@ namespace ControlCatalog.Pages
 
         private void CreateDefaultPerson()
         {
-            DataContext = _person = new Person
+            DataContext = new Person
             {
                 FirstName = "John",
                 LastName = "Doe",

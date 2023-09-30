@@ -15,7 +15,6 @@ namespace Avalonia.Win32.DirectX
         private readonly Guid ID3D11Texture2DGuid = Guid.Parse("6F15AAF2-D208-4E89-9AB4-489535D34F9C");
 
         private readonly EglGlPlatformSurface.IEglWindowGlPlatformSurfaceInfo _window;
-        private readonly DxgiConnection _connection;
         private readonly IDXGIDevice? _dxgiDevice;
         private readonly IDXGIFactory2? _dxgiFactory;
         private readonly IDXGISwapChain1? _swapChain;
@@ -24,10 +23,9 @@ namespace Avalonia.Win32.DirectX
         private IUnknown? _renderTexture;
         private RECT _clientRect;
 
-        public DxgiRenderTarget(EglGlPlatformSurface.IEglWindowGlPlatformSurfaceInfo window, EglContext context, DxgiConnection connection) : base(context)
+        public DxgiRenderTarget(EglGlPlatformSurface.IEglWindowGlPlatformSurfaceInfo window, EglContext context) : base(context)
         {
             _window = window;
-            _connection = connection;
 
             // the D3D device is expected to at least be an ID3D11Device 
             // but how do I wrap an IntPtr as a managed IUnknown now? Like this. 
